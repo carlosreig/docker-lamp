@@ -1,7 +1,6 @@
 #!/bin/bash
 MAINPATH=$(dirname $(cd `dirname "${BASH_SOURCE[0]}"` && pwd))
 PROJECTNAME=$(basename $MAINPATH)
-echo $PROJECTNAME;
 
 docker exec -i --user=1000:1000 $PROJECTNAME-apache composer global require drush/drush:7.*
 docker exec $PROJECTNAME-apache ln -s /home/www-bridge-user/.composer/vendor/bin/drush /usr/bin/drush
