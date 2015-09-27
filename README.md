@@ -31,12 +31,15 @@ Now you have your environment ready! Just remember to execute stop.sh when you f
 Normal workflow
 ======
 
-  * Execute the start.sh script to start LAMP
+  * Execute the start.sh script to start LAMP (`./start.sh`)
+  * When you finish working execute the stop.sh script (`./stop.sh`)
 
-``./start.sh``
-  * When you finish working execute the stop.sh script
+Helper scripts
+==========
 
-``./stop.sh``
+  - You can install Drush 7 + Drupal 7 by executing `./scripts/install_drupal7.sh`
+  - You can install Drush 8 + Drupal 8 by executing `./scripts/install_drupal8.sh`
+  - You can access to the bash by executing `./bash.sh`
 
 Misc
 ======
