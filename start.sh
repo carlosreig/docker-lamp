@@ -4,4 +4,4 @@ SCRIPTDIR=`dirname $FILEPATH`
 PROJECTNAME=`basename $SCRIPTDIR` | tr '[:upper:]' '[:lower:]'
 PROJECTNAME=`basename $SCRIPTDIR`
 
-docker stop $PROJECTNAME-mysql $PROJECTNAME-mail $PROJECTNAME-apache;
+docker start $PROJECTNAME-mysql $PROJECTNAME-mail $PROJECTNAME-apache;
