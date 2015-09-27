@@ -1,5 +1,5 @@
 FROM php:5.5-apache
-RUN useradd -u 1000 www-bridge-user
+RUN useradd -u 1000 -m www-bridge-user
 RUN apt-get update && apt-get install -y \
 	git \
 	wget \
