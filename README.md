@@ -20,11 +20,11 @@ There are 5 bash files to have a really easy way to do the common operations:
   
 First time workflow
 =======
-	* Do clone that repo and give to the repo folder a name related with your project.
-	* Execute the build.sh script to initialize your environment
+  - Do clone that repo and give to the repo folder a name related with your project.
+  - Execute the build.sh script to initialize your environment
 ``./build.sh``
-	* Go to http://localhost and you should see a sucessful message
-  * Remove the www/index.html and place all your project's files in the folder www/
+  - Go to http://localhost and you should see a sucessful message
+  - Remove the www/index.html and place all your project's files in the folder www/
 
 Now you have your environment ready! Just remember to execute stop.sh when you finish.
 
