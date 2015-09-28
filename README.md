@@ -1,4 +1,4 @@
-# Drupal 7 docker
+# A LAMP environment using docker
 A file structrure to have a full Drupal 7 installation in a docker container.
 
 Features
