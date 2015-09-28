@@ -1,5 +1,5 @@
 # A LAMP environment using docker
-A file structrure to have a full Drupal 7 installation in a docker container.
+A few scripts to have a LAMP environment with docker in a **really easy** way.
 
 Features
 ========
@@ -41,9 +41,10 @@ Helper scripts
   - You can install Drush 8 + Drupal 8 by executing `./scripts/install_drupal8.sh`
   - You can access to the bash by executing `./bash.sh`
 
-Misc
+Notes
 ======
 
-If you want to get a terminal in the apache (to execute drush or something else):
+  - The database server host is not 'localhost'. Use 'db' instead of 'localhost'.
+  - The database user is 'root' and the password is '123'
 
-``docker exec -t -i drupal-web /bin/bash``
+
