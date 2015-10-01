@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install mcrypt \
 	&& docker-php-ext-install gd \
-	&& docker-php-ext-install opcache
+	&& docker-php-ext-install opcache \
+	&& docker-php-ext-install pcntl
 
 RUN curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/bin/composer
