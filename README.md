@@ -40,6 +40,7 @@ Helper scripts
   - You can install Drush 7 + Drupal 7 by executing `./scripts/install_drupal7.sh`
   - You can install Drush 8 + Drupal 8 by executing `./scripts/install_drupal8.sh`
   - You can access to the bash by executing `./bash.sh`
+  - You can access to the bash as a the **root user** by executing `./root_bash.sh`
 
 Notes
 ======
