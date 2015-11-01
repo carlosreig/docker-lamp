@@ -9,13 +9,15 @@ RUN apt-get update && apt-get install -y \
 	mysql-client \
 	libpng12-dev \
 	libmcrypt-dev \
+    libicu-dev \
 	&& docker-php-ext-install mbstring \
 	&& docker-php-ext-install mysql \
 	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install mcrypt \
 	&& docker-php-ext-install gd \
 	&& docker-php-ext-install opcache \
-	&& docker-php-ext-install pcntl
+	&& docker-php-ext-install pcntl \
+    && docker-php-ext-install intl
 
 RUN curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/bin/composer
