@@ -12,6 +12,7 @@ RUN apt-get install -y \
 	libpng12-dev \
 	libmcrypt-dev \
     libicu-dev \
+	nodejs \
 	&& docker-php-ext-install mbstring \
 	&& docker-php-ext-install mysql \
 	&& docker-php-ext-install mysqli \
