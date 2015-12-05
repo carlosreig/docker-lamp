@@ -1,0 +1,18 @@
+apache:
+    build: apache
+    links:
+        - db
+        - mail
+    ports:
+        - "80:80"
+    volumes:
+        - www:/var/www/html
+mail:
+    image: mailhog/mailhog
+    ports:
+        - "1025:1025"
+        - "8025:8025"
+db:
+    build: mysql
+    ports:
+        - "3306:3306"
