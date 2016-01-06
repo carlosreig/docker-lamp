@@ -1,4 +1,4 @@
-apache:
+web:
     build: apache
     links:
         - db
