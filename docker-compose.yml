@@ -6,7 +6,7 @@ web:
     ports:
         - "80:80"
     volumes:
-        - www:/var/www/html
+        - ./www:/var/www/html
 mail:
     image: mailhog/mailhog
     ports:
