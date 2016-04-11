@@ -13,22 +13,23 @@ RUN apt-get install -y \
 	libmcrypt-dev \
     libicu-dev \
 	nodejs \
+	libfreetype6-dev \
+	libjpeg62-turbo-dev \
 	&& docker-php-ext-install mbstring \
 	&& docker-php-ext-install mysql \
 	&& docker-php-ext-install mysqli \
-	&& docker-php-ext-install mcrypt \
 	&& docker-php-ext-install gd \
+	&& docker-php-ext-install mcrypt \
+	&& docker-php-ext-install iconv \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-install pcntl \
-    && docker-php-ext-install intl
-
-RUN curl -sS https://getcomposer.org/installer | php \
-	&& mv composer.phar /usr/bin/composer
-
-RUN docker-php-ext-install pdo_mysql
-RUN pecl install xdebug
-
-RUN a2enmod rewrite
+    && docker-php-ext-install intl \
+	&& docker-php-ext-install pdo_mysql \
+	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+	&& curl -sS https://getcomposer.org/installer | php \
+	&& mv composer.phar /usr/bin/composer \
+	&& pecl install xdebug &&
+	&& a2enmod rewrite
 
 ADD templates/apache2.conf /etc/apache2/
 ADD templates/php.ini /usr/local/etc/php/
