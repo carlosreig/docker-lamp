@@ -11,7 +11,7 @@ RUN apt-get install -y \
 	mysql-client \
 	libpng12-dev \
 	libmcrypt-dev \
-    libicu-dev \
+	libicu-dev \
 	nodejs \
 	libfreetype6-dev \
 	libjpeg62-turbo-dev \
@@ -23,12 +23,12 @@ RUN apt-get install -y \
 	&& docker-php-ext-install iconv \
 	&& docker-php-ext-install opcache \
 	&& docker-php-ext-install pcntl \
-    && docker-php-ext-install intl \
+	&& docker-php-ext-install intl \
 	&& docker-php-ext-install pdo_mysql \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/bin/composer \
-	&& pecl install xdebug &&
+	&& pecl install xdebug \
 	&& a2enmod rewrite
 
 ADD templates/apache2.conf /etc/apache2/
