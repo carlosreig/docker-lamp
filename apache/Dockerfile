@@ -15,6 +15,7 @@ RUN apt-get install -y \
 	nodejs \
 	libfreetype6-dev \
 	libjpeg62-turbo-dev \
+	ssmtp \
 	&& docker-php-ext-install mbstring \
 	&& docker-php-ext-install mysql \
 	&& docker-php-ext-install mysqli \
@@ -33,4 +34,5 @@ RUN apt-get install -y \
 
 ADD templates/apache2.conf /etc/apache2/
 ADD templates/php.ini /usr/local/etc/php/
+ADD templates/ssmtp.conf /etc/ssmtp/
 ADD templates/xdebug.ini /usr/local/etc/php/conf.d/
