@@ -33,6 +33,8 @@ RUN apt-get install -y \
 	&& a2enmod rewrite
 
 ADD templates/apache2.conf /etc/apache2/
+ADD templates/vhost.conf /etc/apache2/sites-available/
 ADD templates/php.ini /usr/local/etc/php/
 ADD templates/ssmtp.conf /etc/ssmtp/
 ADD templates/xdebug.ini /usr/local/etc/php/conf.d/
+RUN a2ensite vhost.conf
