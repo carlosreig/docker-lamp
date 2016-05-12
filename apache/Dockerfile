@@ -26,6 +26,7 @@ RUN apt-get install -y \
 	&& docker-php-ext-install pcntl \
 	&& docker-php-ext-install intl \
 	&& docker-php-ext-install pdo_mysql \
+	&& docker-php-ext-install zip \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/bin/composer \
@@ -33,8 +34,6 @@ RUN apt-get install -y \
 	&& a2enmod rewrite
 
 ADD templates/apache2.conf /etc/apache2/
-ADD templates/vhost.conf /etc/apache2/sites-available/
 ADD templates/php.ini /usr/local/etc/php/
 ADD templates/ssmtp.conf /etc/ssmtp/
 ADD templates/xdebug.ini /usr/local/etc/php/conf.d/
-RUN a2ensite vhost.conf
