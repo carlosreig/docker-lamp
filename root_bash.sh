@@ -1,1 +1,2 @@
-docker-compose run web bash
+#!/bin/bash
+docker-compose exec web bash
