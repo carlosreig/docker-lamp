@@ -3,7 +3,7 @@ A few scripts to have a LAMP environment with docker in a **really easy** way.
 
 Features
 ========
-  - A LAMP environment running in just one command (Apache 2.4 - PHP 5.5 - MySQL 5.5)
+  - A LAMP environment running in just one command (Apache 2.4 - PHP 7 - MySQL 5.5)
   - Prepared to have as many containers as you want (usually one per project)
   - Composer installed
   - XDebug installed
@@ -38,8 +38,9 @@ Normal workflow
 Helper scripts
 ==========
 
-  - You can install Drush 7 + Drupal 7 by executing `./scripts/install_drupal7.sh`
-  - You can install Drush 8 + Drupal 8 by executing `./scripts/install_drupal8.sh`
+  - You can install Drush + Drupal 7 by executing `./scripts/install_drupal7.sh`
+  - You can install Drush + Drupal 8 by executing `./scripts/install_drupal8.sh`
+  - You can install WP CLI + Wordpress by executing `./scripts/install_wp.sh`
   - You can access to the bash by executing `./bash.sh`
   - You can access to the bash as a the **root user** by executing `./root_bash.sh`
 
