@@ -38,7 +38,6 @@ Normal workflow
 Helper scripts
 ==========
 
-  - You can install a site from a git repository using `./scripts/install_from_git.sh [git repository]`
   - You can install Drush 7 + Drupal 7 by executing `./scripts/install_drupal7.sh`
   - You can install Drush 8 + Drupal 8 by executing `./scripts/install_drupal8.sh`
   - You can access to the bash by executing `./bash.sh`
@@ -49,3 +48,4 @@ Notes
 
   - The database server host is not 'localhost'. Use 'db' instead of 'localhost'.
   - The database user is 'root' and the password is '123'
+  - You can access to Mailhog in http://localhost:8025
