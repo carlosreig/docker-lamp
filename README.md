@@ -13,10 +13,11 @@ How to use
 =========
 
 There are 5 bash files to have a really easy way to do the common operations:
-  - build.sh: This script **should be only used once**. It is the responsible for setting up the LAMP environment
   - start.sh: This script has to be executed everytime that you want to start LAMP.
   - stop.sh: This script should be executed everytime that you finish working with LAMP.
   - clean.sh: This script is auxiliary, just in case you want to remove your LAMP environment. **By executing that script the database data will be removed**
+  - You can access to the bash by executing `./bash.sh`
+  - You can access to the bash as a the **root user** by executing `./root_bash.sh`
 
 First time workflow
 =======
