@@ -1,0 +1,3 @@
+#!/bin/bash
+docker-compose exec web sh -c 'curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp'
+docker-compose exec --user=1000:1000 web sh -c 'wp core download --path=/var/www/html/wordpress; wp core config --dbname=wp --dbuser=root --dbpass=123 --dbhost=db --path=/var/www/html/wordpress; mysql -uroot -p123 -hdb -e "create database wp"; wp core install --path=/var/www/html/wordpress --url=http://localhost/wordpress --title="Test site" --admin_user=admin --admin_password=admin --admin_email=admin@admin.admin'
