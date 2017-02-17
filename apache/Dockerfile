@@ -16,6 +16,7 @@ RUN apt-get install -y \
 	libfreetype6-dev \
 	libjpeg62-turbo-dev \
 	ssmtp \
+	&& apt-get install -y libmagickwand-dev --no-install-recommends \
 	&& docker-php-ext-install mbstring \
 	&& docker-php-ext-install pdo_mysql \
 	&& docker-php-ext-install mysqli \
@@ -26,6 +27,9 @@ RUN apt-get install -y \
 	&& docker-php-ext-install intl \
 	&& docker-php-ext-install zip \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+	&& pecl install imagick \
+	&& docker-php-ext-enable imagick \
+	&& rm -r /var/lib/apt/lists/*
 	&& curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/bin/composer \
 	&& pecl install xdebug \
