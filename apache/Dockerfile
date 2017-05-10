@@ -1,7 +1,7 @@
 FROM php:7-apache
 RUN useradd -u 1000 -m www-bridge-user
 RUN apt-get update && \
-    curl -sL https://deb.nodesource.com/setup_4.x | bash -
+    curl -sL https://deb.nodesource.com/setup_7.x | bash -
 RUN apt-get install -y \
 	git \
 	wget \
