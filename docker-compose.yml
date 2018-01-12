@@ -5,6 +5,7 @@ web:
         - mail
     ports:
         - "80:80"
+        - "443:443"
     volumes:
         - ./www:/var/www/html
 mail:

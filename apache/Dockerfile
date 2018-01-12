@@ -1,7 +1,10 @@
 FROM php:7.1-apache
+
 RUN useradd -u 1000 -m www-bridge-user
+
 RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_9.x | bash -
+
 RUN apt-get install -y \
 	git \
 	wget \
@@ -26,15 +29,22 @@ RUN apt-get install -y \
 	docker-php-ext-install intl && \
 	docker-php-ext-install zip && \
 	docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
-	docker-php-ext-install gd && \	
+	docker-php-ext-install gd && \
 	pecl install imagick && \
 	docker-php-ext-enable imagick && \
 	rm -r /var/lib/apt/lists/* && \
 	curl -sS https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/bin/composer && \
 	pecl install xdebug && \
-	a2enmod rewrite
+	a2enmod rewrite && \
+	a2enmod ssl && \
+	a2ensite default-ssl
+
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem -subj '/'
+
 ADD templates/apache2.conf /etc/apache2/
 ADD templates/php.ini /usr/local/etc/php/
 ADD templates/ssmtp.conf /etc/ssmtp/
 ADD templates/xdebug.ini /usr/local/etc/php/conf.d/
+
+
