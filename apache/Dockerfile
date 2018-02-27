@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:5.6-apache
 
 RUN useradd -u 1000 -m www-bridge-user
 
@@ -35,7 +35,7 @@ RUN apt-get install -y \
 	rm -r /var/lib/apt/lists/* && \
 	curl -sS https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/bin/composer && \
-	pecl install xdebug && \
+	pecl install xdebug-2.5.5 && \
 	a2enmod rewrite && \
 	a2enmod ssl && \
 	a2ensite default-ssl
