@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.3-apache
 
 RUN useradd -u 1000 -m www-bridge-user
 
@@ -15,15 +15,17 @@ RUN apt-get install -y \
   libmcrypt-dev \
   libicu-dev \
   nodejs \
+  libzip-dev \
   libfreetype6-dev \
   libjpeg62-turbo-dev \
   gnupg2 \
   ssmtp && \
+  pecl install mcrypt-1.0.2 && \
   apt-get install -y libmagickwand-dev --no-install-recommends && \
   docker-php-ext-install mbstring && \
   docker-php-ext-install pdo_mysql && \
   docker-php-ext-install mysqli && \
-  docker-php-ext-install mcrypt && \
+  docker-php-ext-enable mcrypt && \
   docker-php-ext-install opcache && \
   docker-php-ext-install pcntl && \
   docker-php-ext-install intl && \
