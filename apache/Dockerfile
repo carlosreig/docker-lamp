@@ -40,11 +40,10 @@ RUN apt-get install -y \
   pecl install xdebug && \
   a2enmod rewrite && \
   a2enmod ssl && \
-  a2ensite default-ssl
+  a2ensite default-ssl && \
+  curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
-
-RUN apt-get install nodejs && \
+RUN apt-get install nodejs -y && \
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem -subj '/'
 
 ADD templates/apache2.conf /etc/apache2/
