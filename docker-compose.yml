@@ -1,19 +1,21 @@
-web:
-    build: apache
-    links:
-        - db
-        - mail
-    ports:
-        - "80:80"
-        - "443:443"
-    volumes:
-        - ./www:/var/www/html
-mail:
-    image: mailhog/mailhog
-    ports:
-        - "1025:1025"
-        - "8025:8025"
-db:
-    build: mysql
-    ports:
-        - "3306:3306"
+version: "3.7"
+services:
+    web:
+        build: apache
+        links:
+            - db
+            - mail
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./www:/var/www/html
+    mail:
+        image: mailhog/mailhog
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+    db:
+        build: mysql
+        ports:
+            - "3306:3306"
