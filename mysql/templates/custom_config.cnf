@@ -1,2 +1,13 @@
 [mysqld]
 max_allowed_packet=128M
+default-storage-engine=InnoDB 
+collation-server = utf8mb4_unicode_ci
+init-connect='SET NAMES utf8mb4'
+character-set-server = utf8mb4
+skip-character-set-client-handshake
+
+[client]
+default-character-set   = utf8mb4
+
+[mysql]
+default-character-set   = utf8mb4
