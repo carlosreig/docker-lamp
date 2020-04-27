@@ -12,7 +12,7 @@ RUN apt-get install -y \
 	zip \
 	vim \
 	mysql-client \
-	libpng12-dev \
+	libpng-dev \
 	libmcrypt-dev \
 	libicu-dev \
 	nodejs \
