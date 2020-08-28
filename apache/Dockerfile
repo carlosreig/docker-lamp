@@ -1,5 +1,7 @@
 FROM php:5.6-apache
 
+RUN apt-get update && apt-get install -y gnupg2
+
 RUN useradd -u 1000 -m www-bridge-user
 
 RUN apt-get update && \
@@ -30,6 +32,7 @@ RUN apt-get install -y \
 	docker-php-ext-install zip && \
 	docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
 	docker-php-ext-install gd && \
+  docker-php-ext-install soap && \
 	pecl install imagick && \
 	docker-php-ext-enable imagick && \
 	rm -r /var/lib/apt/lists/* && \
