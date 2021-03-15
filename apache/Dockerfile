@@ -36,6 +36,7 @@ RUN apt-get install -y \
   rm -r /var/lib/apt/lists/* && \
   curl -sS https://getcomposer.org/installer | php && \
   mv composer.phar /usr/bin/composer && \
+  composer self-update --1 && \
   pecl install xdebug && \
   a2enmod rewrite && \
   a2enmod ssl && \
