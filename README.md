@@ -12,37 +12,66 @@ Features
 How to use
 =========
 
-There are 5 bash files to have a really easy way to do the common operations:
-  - start.sh: This script has to be executed everytime that you want to start LAMP.
-  - stop.sh: This script should be executed everytime that you finish working with LAMP.
-  - clean.sh: This script is auxiliary, just in case you want to remove your LAMP environment. **By executing that script the database data will be removed**
-  - You can access to the bash by executing `./bash.sh`
-  - You can access to the bash as a the **root user** by executing `./root_bash.sh`
+There is a Makefile that allow you to perform the next actions:
+
+## help
+Will show a help similar to this:
+
+![Makefile help](docs/makefile.png "Makefile help")
+
+## start  
+This action has to be executed everytime that you want to start LAMP.
+
+## stop
+This action should be executed everytime that you finish working with LAMP.
+ 
+## destroy  
+This action is auxiliary, just in case you want to remove your LAMP environment. **By executing this action the database data will be removed**
+ 
+## rebuild
+This action destroy and start again all the environment
+
+## shell
+You can access to the bash by executing this action
+
+## root-shell
+You can access to the bash as a the **root user** by executing this
 
 First time workflow
 =======
   - Do clone that repo and give to the repo folder a name related with your project.
-  - Execute the start.sh script to initialize your environment
-``./start.sh``
+  - Execute the `make start` command to initialize your environment
   - Go to http://localhost and you should see a sucessful message
   - Remove the www/index.html and place all your project's files in the folder www/
 
-Now you have your environment ready! Just remember to execute stop.sh when you finish.
+Now you have your environment ready! Just remember to execute `make stop` when you finish.
 
 Normal workflow
 ======
 
-  * Execute the start.sh script to start LAMP (`./start.sh`)
-  * When you finish working execute the stop.sh script (`./stop.sh`)
+  * Execute `make start` to start LAMP
+  * When you finish working execute `make stop`
 
-Helper scripts
+Install additional software
 ==========
 
-  - You can install Drush + Drupal 7 by executing `./scripts/install_drupal7.sh`
-  - You can install Drush + Drupal 8 by executing `./scripts/install_drupal8.sh`
-  - You can install WP CLI + Wordpress by executing `./scripts/install_wp.sh`
-  - You can access to the bash by executing `./bash.sh`
-  - You can access to the bash as a the **root user** by executing `./root_bash.sh`
+  - You can install Drush + Drupal 7 by executing `make drupal7`
+  - You can install Drush + Drupal 8 by executing `make drupal8`
+  - You can install WP CLI + Wordpress by executing `make wordpress`
+
+Composer
+========
+
+You can use composer via the makefile too:
+
+## composer-install
+Install all the dependencies
+
+## composer-update
+Update all the dependencies
+
+## composer CMD="command"
+Execute any composer command you want, for example: `make composer CMD="require --dev phpunit/phpunit"` will install PHPUnit as development dependency.
 
 Notes
 ======
